@@ -48,7 +48,7 @@ def getCooccurrences(
   for event in events:
     if event.location not in eventsPerLocation: 
       eventsPerLocation[event.location] = list()
-    eventsPerLocation[event.loc].append(event)
+    eventsPerLocation[event.location].append(event)
   
   cooccurrences = list()
   queue = deque()
