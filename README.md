@@ -6,7 +6,7 @@ same time. Optionally, it could also be constraint such that only events at the
 same location at the same time are mapped. Hence a spatio-temporal network is 
 obtained. 
 
-This package make use of the 
+This package makes use of the 
 [NetworkX library](https://networkx.org/documentation/stable/). 
 
 ## Installation
