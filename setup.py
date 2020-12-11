@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="cooccurringNetwork",
-    version="0.0.1",
+    version="1.1",
     author="Gerrit-Jan de Bruin",
     author_email="gerritjan.debruin@gmail.com",
     description="Module to create cooccuring networks from event data.",
