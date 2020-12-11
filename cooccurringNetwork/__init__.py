@@ -18,7 +18,7 @@ class Event(NamedTuple):
   entityId: str
   time: pd.Timestamp
   location: str = None
-  attributes: dict
+  attributes: dict = dict()
 
   
 class Cooccurrence(NamedTuple):
