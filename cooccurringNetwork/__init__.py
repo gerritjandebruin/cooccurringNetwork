@@ -3,7 +3,7 @@ from typing import NamedTuple
 
 from networkx import Graph
 import pandas as pd
-from tqdm.autnotebook import tqdm
+from tqdm.autonotebook import tqdm
 
 class Event(NamedTuple):
   """
