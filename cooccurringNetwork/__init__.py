@@ -53,19 +53,17 @@ def getCooccurrences(
   
   cooccurrences = list()
   queue = deque()
-  kwargs = dict(disable=not verbose)
-  for location, events in tqdm(eventsPerLocation.items(), position=0, **kwargs):
-    for event in tqdm(events, position=1, desc=location, **kwargs):
+  for location, events in tqdm(eventsPerLocation.items(), position=0, 
+                               disable=not verbose, leave=False):
+    for event in tqdm(events, position=1, desc=location, position=1,
+                     disable=not verbose, leave=False):
       for otherEvent in queue.copy():
         if event.entityId != otherEvent.entityId:
           deltaTime = event.time - otherEvent.time
           if deltaTime < deltaTimeMax: 
             cooccurrences.append(
-              Cooccurrence(
-                event=event, otherEvent=otherEvent, deltaTime=deltaTime, 
-                time=event.time
-              )
-            )
+              Cooccurrence(event=event, otherEvent=otherEvent, 
+                           deltaTime=deltaTime, time=event.time))
           else: queue.popleft()
       queue.append(event)
   return cooccurrences
