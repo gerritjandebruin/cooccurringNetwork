@@ -24,7 +24,7 @@ like this:
 ```python
 time = pd.Timestamp(year=2017, month=1, day=1, hour=12)
 eventA = Event(
-  Index=0, entityId='John Doe', time=time, attributes=dict(a=1), location='NY'
+  Index=0, entity='John Doe', time=time, attributes=dict(a=1), location='NY'
 )
 eventB = Event(1, 'Jane Doe', time=time, attributes=dict(a=2), location='NY')
 eventC = Event(2, 'Jane Doe', time=time, attributes=dict(a=2), location='W')
@@ -34,13 +34,13 @@ The function `getCooccurences` allows to obtain a list of all co-occurences of
 two events:
 ```python
 events = [eventA, eventB, eventC]
-cooccurences = getCooccurrences(events, deltaTimeMax=pd.Timedelta('1m'))
+cooccurences = get_cooccurrences(events, max_timedelta=pd.Timedelta('1m'))
 ```
 
 Since this can obtain a lot of random co-occurence events because two entities
 happen by change on the same time, there is also a function 
-`divideCooccurences`. This function checks whether co-occurences happen multiple
-times separated by a minimum time gap.
+`divide_cooccurences`. This function checks whether co-occurences happen 
+multiple times separated by a minimum time gap.
 
 ## More information
 This package was used in a publication at the 
